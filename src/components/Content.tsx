@@ -27,15 +27,11 @@ export function Content({ selectedGenreId, onGenreFound }: ContentProps) {
   useEffect(() => {
     api
       .get<MovieProps[]>(`movies/?Genre_id=${selectedGenreId}`)
-      .then((response) => {
-        setMovies(response.data);
-      });
+      .then(({ data }) => setMovies(data));
 
     api
       .get<GenreResponseProps>(`genres/${selectedGenreId}`)
-      .then((response) => {
-        onGenreFound(response.data);
-      });
+      .then(({ data }) => onGenreFound(data));
   }, [selectedGenreId]);
 
   return (

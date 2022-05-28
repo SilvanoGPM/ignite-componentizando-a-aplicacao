@@ -16,14 +16,14 @@ export function App() {
     {} as GenreResponseProps
   );
 
-  function handleClickButton(id: number) {
+  function handleSelectedGenreChange(id: number) {
     setSelectedGenreId(id);
   }
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <SideBar
-        onSelectGenre={handleClickButton}
+        onSelectGenre={handleSelectedGenreChange}
         selectedGenreId={selectedGenreId}
       />
 

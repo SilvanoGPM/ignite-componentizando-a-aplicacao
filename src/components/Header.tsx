@@ -1,5 +1,3 @@
-import { GenreResponseProps } from './SideBar';
-
 interface HeaderProps {
   title: string;
 }
