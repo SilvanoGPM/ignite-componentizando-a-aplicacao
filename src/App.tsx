@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { SideBar } from './components/SideBar';
+import { SideBar, GenreResponseProps } from './components/SideBar';
 import { Content } from './components/Content';
-
-import { GenreResponseProps } from './components/SideBar';
+import { Header } from './components/Header';
 
 import './styles/global.scss';
 
@@ -29,11 +28,7 @@ export function App() {
       />
 
       <div className="container">
-        <header>
-          <span className="category">
-            Categoria:<span> {selectedGenre.title}</span>
-          </span>
-        </header>
+        <Header title={selectedGenre.title} />
 
         <Content
           selectedGenreId={selectedGenreId}
